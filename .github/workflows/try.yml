@@ -10,8 +10,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install dependencies
-        run: npm install
+      - name: List all project files
+        run: ls -R
 
-      - name: Run the code to find errors
-        run: node yourfile.js
+      - name: Validate HTML files
+        run: |
+          sudo npm install -g htmlhint
+          htmlhint .
