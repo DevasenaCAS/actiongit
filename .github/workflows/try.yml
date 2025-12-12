@@ -1,0 +1,17 @@
+name: Error Check
+
+on: push
+
+jobs:
+  error_check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run the code to find errors
+        run: node yourfile.js
